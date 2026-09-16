@@ -1,22 +1,20 @@
 
 ---
 
-# Exercice 1 — `ex01_hello/README.md`
+# Exercice 01 — Hello World (syscall)
 
-## Exercice 01 — Hello World (syscall)
-
-### Objectif
+## Objectif
 Afficher un message simple sur la sortie standard en utilisant le syscall `write`.
 
-### Fichiers
+## Fichiers
 - `ex01.asm` : code source NASM.
 
-### Compilation
+## Compilation
 nasm -f elf64 ex01.asm -o ex01.o
 ld ex01.o -o ex01
 
-### Exécution
+## Exécution
 ./ex01
 
-### Output
+## Output
 Hello, world!
