@@ -1,7 +1,7 @@
 
 ---
 
-# # Exercice 04 — Lire un entier avec scanf
+# Exercice 04 — Lire un entier avec scanf
 
 ## Objectif
 Lire un entier depuis l'entrée standard avec `scanf` et l'afficher ensuite.
