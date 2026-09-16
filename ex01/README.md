@@ -2,6 +2,7 @@
 ---
 
 #### Exercice 1 — `ex01_hello/README.md`
+```markdown 
 
 # Exercice 01 — Hello World (syscall)
 
@@ -12,7 +13,6 @@ Afficher un message simple sur la sortie standard en utilisant le syscall `write
 - `ex01.asm` : code source NASM.
 
 ## Compilation
-```bash
 nasm -f elf64 ex01.asm -o ex01.o
 ld ex01.o -o ex01
 
@@ -21,4 +21,3 @@ ld ex01.o -o ex01
 
 ## Output
 Hello, world!
-
