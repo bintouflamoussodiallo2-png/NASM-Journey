@@ -1,7 +1,7 @@
 
 ---
 
-Exercice 02 — Exit code personnalisé
+# Exercice 02 — Exit code personnalisé
 
 ## Objectif
 Terminer le programme avec un code de sortie spécifique en utilisant le syscall `exit`.
