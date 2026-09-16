@@ -17,4 +17,5 @@ Additionner deux entiers (constants ou lus) et afficher le résultat.
 - `./ex05`
 
 ## Output
-Somme: 7 (ou une autre valeur selon les nombres choisis.)
+Somme: 7 
+(ou une autre valeur selon les nombres choisis.)
