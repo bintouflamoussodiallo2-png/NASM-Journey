@@ -1,0 +1,267 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{NASM x86\_64 -- Mini-exemples pour pratiquer l'assembleur sous Linux}
+\author{Bintou Flamousso Diallo}
+\date{Septembre 2026}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section*{Introduction}
+Ce document regroupe 15 mini-exemples en assembleur NASM x86\_64 sous Linux.
+Chaque exercice possède :
+\begin{itemize}[noitemsep]
+    \item un dossier dédié dans le dépôt Git ;
+    \item un fichier \texttt{.asm} contenant le code source ;
+    \item un fichier \texttt{README.md} décrivant l'objectif, les commandes et l'output attendu.
+\end{itemize}
+
+\section{Exercice 1 -- Hello World (syscall)}
+\subsection*{Objectif}
+Afficher un message simple en utilisant le syscall \texttt{write}.
+
+\subsection*{Code source}
+Chemin du fichier :
+\begin{itemize}[noitemsep]
+    \item \texttt{ex01\_hello/ex01.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex01.asm -o ex01.o}
+    \item \texttt{ld ex01.o -o ex01}
+    \item \texttt{./ex01}
+\end{itemize}
+
+\section{Exercice 2 -- Exit code personnalisé}
+\subsection*{Objectif}
+Utiliser le syscall \texttt{exit} pour retourner un code de sortie spécifique.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex02\_exitcode/ex02.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex02.asm -o ex02.o}
+    \item \texttt{ld ex02.o -o ex02}
+    \item \texttt{./ex02}
+\end{itemize}
+
+\section{Exercice 3 -- Afficher un entier avec printf}
+\subsection*{Objectif}
+Appeler \texttt{printf} pour afficher un entier en utilisant la convention d'appel System V.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex03\_printf/ex03.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex03.asm -o ex03.o}
+    \item \texttt{gcc ex03.o -o ex03}
+    \item \texttt{./ex03}
+\end{itemize}
+
+\section{Exercice 4 -- Lire un entier avec scanf}
+\subsection*{Objectif}
+Lire un entier depuis l'entrée standard avec \texttt{scanf} et l'afficher.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex04\_scanf/ex04.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex04.asm -o ex04.o}
+    \item \texttt{gcc ex04.o -o ex04}
+    \item \texttt{./ex04}
+\end{itemize}
+
+\section{Exercice 5 -- Addition simple}
+\subsection*{Objectif}
+Additionner deux entiers et afficher le résultat.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex05\_add/ex05.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex05.asm -o ex05.o}
+    \item \texttt{gcc ex05.o -o ex05}
+    \item \texttt{./ex05}
+\end{itemize}
+
+\section{Exercice 6 -- Comparer deux valeurs}
+\subsection*{Objectif}
+Comparer deux entiers et afficher un message selon le résultat (\texttt{<}, \texttt{=}, \texttt{>}).
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex06\_compare/ex06.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex06.asm -o ex06.o}
+    \item \texttt{gcc ex06.o -o ex06}
+    \item \texttt{./ex06}
+\end{itemize}
+
+\section{Exercice 7 -- Boucle simple (compter de 5 à 1)}
+\subsection*{Objectif}
+Utiliser une boucle avec \texttt{dec} et \texttt{jmp} pour compter de 5 à 1.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex07\_loop/ex07.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex07.asm -o ex07.o}
+    \item \texttt{gcc ex07.o -o ex07}
+    \item \texttt{./ex07}
+\end{itemize}
+
+\section{Exercice 8 -- Boucle avec condition (tant que > 0)}
+\subsection*{Objectif}
+Implémenter une boucle qui décrémente une valeur tant qu'elle est strictement positive.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex08\_while/ex08.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex08.asm -o ex08.o}
+    \item \texttt{gcc ex08.o -o ex08}
+    \item \texttt{./ex08}
+\end{itemize}
+
+\section{Exercice 9 -- Manipuler un tableau d'entiers}
+\subsection*{Objectif}
+Parcourir un tableau d'entiers en mémoire et afficher chaque élément.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex09\_array/ex09.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex09.asm -o ex09.o}
+    \item \texttt{gcc ex09.o -o ex09}
+    \item \texttt{./ex09}
+\end{itemize}
+
+\section{Exercice 10 -- Trouver le maximum dans un tableau}
+\subsection*{Objectif}
+Parcourir un tableau d'entiers et déterminer la valeur maximale.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex10\_max/ex10.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex10.asm -o ex10.o}
+    \item \texttt{gcc ex10.o -o ex10}
+    \item \texttt{./ex10}
+\end{itemize}
+
+\section{Exercice 11 -- Implémenter strlen}
+\subsection*{Objectif}
+Compter le nombre de caractères dans une chaîne terminée par \texttt{0}.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex11\_strlen/ex11.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex11.asm -o ex11.o}
+    \item \texttt{gcc ex11.o -o ex11}
+    \item \texttt{./ex11}
+\end{itemize}
+
+\section{Exercice 12 -- Implémenter strcpy}
+\subsection*{Objectif}
+Copier une chaîne source vers une chaîne destination caractère par caractère.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex12\_strcpy/ex12.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex12.asm -o ex12.o}
+    \item \texttt{gcc ex12.o -o ex12}
+    \item \texttt{./ex12}
+\end{itemize}
+
+\section{Exercice 13 -- Implémenter atoi}
+\subsection*{Objectif}
+Convertir une chaîne de chiffres ASCII en entier (\texttt{int}).
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex13\_atoi/ex13.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex13.asm -o ex13.o}
+    \item \texttt{gcc ex13.o -o ex13}
+    \item \texttt{./ex13}
+\end{itemize}
+
+\section{Exercice 14 -- Mini-calculatrice (+, -, *, /)}
+\subsection*{Objectif}
+Lire deux entiers et un opérateur, effectuer l'opération et afficher le résultat.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex14\_calc/ex14.asm}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex14.asm -o ex14.o}
+    \item \texttt{gcc ex14.o -o ex14}
+    \item \texttt{./ex14}
+\end{itemize}
+
+\section{Exercice 15 -- Appeler une fonction ASM depuis C}
+\subsection*{Objectif}
+Écrire une fonction en assembleur appelée depuis un programme C, en respectant la convention d'appel System V.
+
+\subsection*{Code source}
+\begin{itemize}[noitemsep]
+    \item \texttt{ex15\_from\_c/ex15.asm}
+    \item \texttt{ex15\_from\_c/main.c}
+\end{itemize}
+
+\subsection*{Compilation et exécution}
+\begin{itemize}[noitemsep]
+    \item \texttt{nasm -f elf64 ex15.asm -o ex15.o}
+    \item \texttt{gcc main.c ex15.o -o ex15}
+    \item \texttt{./ex15}
+\end{itemize}
+
+\end{document}
