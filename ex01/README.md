@@ -2,7 +2,6 @@
 ---
 
 #### Exercice 1 — `ex01_hello/README.md`
-```markdown 
 
 # Exercice 01 — Hello World (syscall)
 
